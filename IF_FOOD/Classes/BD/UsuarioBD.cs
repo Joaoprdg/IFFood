@@ -11,7 +11,7 @@ namespace IFFood.Classes.BD
         public void Inserir(Usuario U)
         {
             const string sql = @"INSERT INTO G8_USUARIO (USUARIO, SENHA, NOME, DATA_NASC, EMAIL, ADM, GENERO) VALUES (:USUARIO, :SENHA, :NOME, :DATA_NASC, :EMAIL, :ADM, :GENERO)";
-
+            //3
             using OracleConnection conn = ConexaoOracle.ObterConexao();
             using OracleCommand cmd = new OracleCommand(sql, conn);
 
