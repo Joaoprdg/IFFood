@@ -38,7 +38,7 @@ namespace IFFood.Classes.BD
 
             cmd.ExecuteNonQuery();
         }
-
+        //a
         public bool VerificaLogin(string username, string senha)
         {
             const string sql = @"SELECT COUNT(*) 
