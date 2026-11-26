@@ -73,8 +73,9 @@
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(361, 853);
+            panel1.Size = new Size(316, 646);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -84,18 +85,20 @@
             flowLayoutPanel1.Controls.Add(pn_T2P);
             flowLayoutPanel1.Controls.Add(pn_PMCarrinho);
             flowLayoutPanel1.Controls.Add(pn_PMAdm);
-            flowLayoutPanel1.Location = new Point(24, 34);
+            flowLayoutPanel1.Location = new Point(21, 26);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(292, 1145);
+            flowLayoutPanel1.Size = new Size(256, 859);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // pn_PerfilInfoU
             // 
             pn_PerfilInfoU.BackColor = Color.Gainsboro;
             pn_PerfilInfoU.Controls.Add(flp_PerfilInfoU);
-            pn_PerfilInfoU.Location = new Point(3, 3);
+            pn_PerfilInfoU.Location = new Point(3, 2);
+            pn_PerfilInfoU.Margin = new Padding(3, 2, 3, 2);
             pn_PerfilInfoU.Name = "pn_PerfilInfoU";
-            pn_PerfilInfoU.Size = new Size(287, 192);
+            pn_PerfilInfoU.Size = new Size(251, 144);
             pn_PerfilInfoU.TabIndex = 1;
             pn_PerfilInfoU.Paint += pn_PerfilInfoU_Paint;
             // 
@@ -104,9 +107,10 @@
             flp_PerfilInfoU.Controls.Add(pn_CNomeInfoU);
             flp_PerfilInfoU.Controls.Add(pn_OutrosDadosInfoU);
             flp_PerfilInfoU.FlowDirection = FlowDirection.TopDown;
-            flp_PerfilInfoU.Location = new Point(3, 17);
+            flp_PerfilInfoU.Location = new Point(3, 13);
+            flp_PerfilInfoU.Margin = new Padding(3, 2, 3, 2);
             flp_PerfilInfoU.Name = "flp_PerfilInfoU";
-            flp_PerfilInfoU.Size = new Size(281, 170);
+            flp_PerfilInfoU.Size = new Size(246, 128);
             flp_PerfilInfoU.TabIndex = 0;
             flp_PerfilInfoU.Paint += flp_PerfilInfoU_Paint;
             // 
@@ -116,19 +120,21 @@
             pn_CNomeInfoU.Controls.Add(lbl_UserNameInfo);
             pn_CNomeInfoU.Controls.Add(pb_FPerfilinfoU);
             pn_CNomeInfoU.Controls.Add(lbl_InfoNomeU);
-            pn_CNomeInfoU.Location = new Point(3, 3);
-            pn_CNomeInfoU.MinimumSize = new Size(0, 70);
+            pn_CNomeInfoU.Location = new Point(3, 2);
+            pn_CNomeInfoU.Margin = new Padding(3, 2, 3, 2);
+            pn_CNomeInfoU.MinimumSize = new Size(0, 52);
             pn_CNomeInfoU.Name = "pn_CNomeInfoU";
-            pn_CNomeInfoU.Size = new Size(275, 70);
+            pn_CNomeInfoU.Size = new Size(241, 52);
             pn_CNomeInfoU.TabIndex = 3;
+            pn_CNomeInfoU.Paint += pn_CNomeInfoU_Paint;
             // 
             // lbl_UserNameInfo
             // 
             lbl_UserNameInfo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_UserNameInfo.AutoSize = true;
-            lbl_UserNameInfo.Location = new Point(3, 35);
+            lbl_UserNameInfo.Location = new Point(3, 26);
             lbl_UserNameInfo.Name = "lbl_UserNameInfo";
-            lbl_UserNameInfo.Size = new Size(18, 20);
+            lbl_UserNameInfo.Size = new Size(14, 15);
             lbl_UserNameInfo.TabIndex = 3;
             lbl_UserNameInfo.Text = "#";
             // 
@@ -136,9 +142,10 @@
             // 
             pb_FPerfilinfoU.BackColor = Color.Transparent;
             pb_FPerfilinfoU.Image = Properties.Resources._8207765;
-            pb_FPerfilinfoU.Location = new Point(215, 0);
+            pb_FPerfilinfoU.Location = new Point(188, 0);
+            pb_FPerfilinfoU.Margin = new Padding(3, 2, 3, 2);
             pb_FPerfilinfoU.Name = "pb_FPerfilinfoU";
-            pb_FPerfilinfoU.Size = new Size(60, 60);
+            pb_FPerfilinfoU.Size = new Size(52, 45);
             pb_FPerfilinfoU.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_FPerfilinfoU.TabIndex = 2;
             pb_FPerfilinfoU.TabStop = false;
@@ -149,9 +156,9 @@
             lbl_InfoNomeU.AutoSize = true;
             lbl_InfoNomeU.BackColor = Color.Transparent;
             lbl_InfoNomeU.Font = new Font("Segoe UI", 10F);
-            lbl_InfoNomeU.Location = new Point(3, 3);
+            lbl_InfoNomeU.Location = new Point(3, 2);
             lbl_InfoNomeU.Name = "lbl_InfoNomeU";
-            lbl_InfoNomeU.Size = new Size(66, 23);
+            lbl_InfoNomeU.Size = new Size(53, 19);
             lbl_InfoNomeU.TabIndex = 1;
             lbl_InfoNomeU.Text = "Nome: ";
             // 
@@ -160,19 +167,20 @@
             pn_OutrosDadosInfoU.BackColor = Color.Transparent;
             pn_OutrosDadosInfoU.Controls.Add(lbl_IdadeInfoU);
             pn_OutrosDadosInfoU.Controls.Add(lbl_EmailInfoU);
-            pn_OutrosDadosInfoU.Location = new Point(3, 79);
-            pn_OutrosDadosInfoU.MinimumSize = new Size(0, 75);
+            pn_OutrosDadosInfoU.Location = new Point(3, 58);
+            pn_OutrosDadosInfoU.Margin = new Padding(3, 2, 3, 2);
+            pn_OutrosDadosInfoU.MinimumSize = new Size(0, 56);
             pn_OutrosDadosInfoU.Name = "pn_OutrosDadosInfoU";
-            pn_OutrosDadosInfoU.Size = new Size(275, 75);
+            pn_OutrosDadosInfoU.Size = new Size(241, 56);
             pn_OutrosDadosInfoU.TabIndex = 4;
             // 
             // lbl_IdadeInfoU
             // 
             lbl_IdadeInfoU.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_IdadeInfoU.AutoSize = true;
-            lbl_IdadeInfoU.Location = new Point(10, 46);
+            lbl_IdadeInfoU.Location = new Point(9, 34);
             lbl_IdadeInfoU.Name = "lbl_IdadeInfoU";
-            lbl_IdadeInfoU.Size = new Size(54, 20);
+            lbl_IdadeInfoU.Size = new Size(42, 15);
             lbl_IdadeInfoU.TabIndex = 1;
             lbl_IdadeInfoU.Text = "Idade: ";
             // 
@@ -180,9 +188,9 @@
             // 
             lbl_EmailInfoU.AutoSize = true;
             lbl_EmailInfoU.BackColor = Color.Transparent;
-            lbl_EmailInfoU.Location = new Point(10, 11);
+            lbl_EmailInfoU.Location = new Point(9, 8);
             lbl_EmailInfoU.Name = "lbl_EmailInfoU";
-            lbl_EmailInfoU.Size = new Size(59, 20);
+            lbl_EmailInfoU.Size = new Size(47, 15);
             lbl_EmailInfoU.TabIndex = 0;
             lbl_EmailInfoU.Text = "E-Mail: ";
             // 
@@ -190,16 +198,18 @@
             // 
             pn_T2P.BackColor = Color.DimGray;
             pn_T2P.Controls.Add(btn_T2Perfil);
-            pn_T2P.Location = new Point(3, 201);
+            pn_T2P.Location = new Point(3, 150);
+            pn_T2P.Margin = new Padding(3, 2, 3, 2);
             pn_T2P.Name = "pn_T2P";
-            pn_T2P.Size = new Size(287, 256);
+            pn_T2P.Size = new Size(251, 192);
             pn_T2P.TabIndex = 0;
             // 
             // btn_T2Perfil
             // 
             btn_T2Perfil.Location = new Point(0, 0);
+            btn_T2Perfil.Margin = new Padding(3, 2, 3, 2);
             btn_T2Perfil.Name = "btn_T2Perfil";
-            btn_T2Perfil.Size = new Size(287, 50);
+            btn_T2Perfil.Size = new Size(251, 38);
             btn_T2Perfil.TabIndex = 0;
             btn_T2Perfil.Text = "Editar Perfil";
             btn_T2Perfil.UseVisualStyleBackColor = true;
@@ -209,16 +219,18 @@
             // 
             pn_PMCarrinho.BackColor = Color.DimGray;
             pn_PMCarrinho.Controls.Add(btn_VerCarrinho);
-            pn_PMCarrinho.Location = new Point(3, 463);
+            pn_PMCarrinho.Location = new Point(3, 346);
+            pn_PMCarrinho.Margin = new Padding(3, 2, 3, 2);
             pn_PMCarrinho.Name = "pn_PMCarrinho";
-            pn_PMCarrinho.Size = new Size(289, 253);
+            pn_PMCarrinho.Size = new Size(253, 190);
             pn_PMCarrinho.TabIndex = 1;
             // 
             // btn_VerCarrinho
             // 
             btn_VerCarrinho.Location = new Point(2, 0);
+            btn_VerCarrinho.Margin = new Padding(3, 2, 3, 2);
             btn_VerCarrinho.Name = "btn_VerCarrinho";
-            btn_VerCarrinho.Size = new Size(287, 50);
+            btn_VerCarrinho.Size = new Size(251, 38);
             btn_VerCarrinho.TabIndex = 1;
             btn_VerCarrinho.Text = "Ver Carrinho";
             btn_VerCarrinho.UseVisualStyleBackColor = true;
@@ -229,16 +241,18 @@
             pn_PMAdm.BackColor = Color.DimGray;
             pn_PMAdm.Controls.Add(trv_MenuAdmFunc);
             pn_PMAdm.Controls.Add(btn_PMAdm);
-            pn_PMAdm.Location = new Point(3, 722);
+            pn_PMAdm.Location = new Point(3, 540);
+            pn_PMAdm.Margin = new Padding(3, 2, 3, 2);
             pn_PMAdm.Name = "pn_PMAdm";
-            pn_PMAdm.Size = new Size(289, 270);
+            pn_PMAdm.Size = new Size(253, 202);
             pn_PMAdm.TabIndex = 2;
             // 
             // trv_MenuAdmFunc
             // 
             trv_MenuAdmFunc.BackColor = SystemColors.Menu;
-            trv_MenuAdmFunc.Location = new Point(9, 65);
-            trv_MenuAdmFunc.MinimumSize = new Size(272, 0);
+            trv_MenuAdmFunc.Location = new Point(8, 49);
+            trv_MenuAdmFunc.Margin = new Padding(3, 2, 3, 2);
+            trv_MenuAdmFunc.MinimumSize = new Size(238, 4);
             trv_MenuAdmFunc.Name = "trv_MenuAdmFunc";
             treeNode1.Name = "no_CadastrarProd";
             treeNode1.Text = "- Cadastrar";
@@ -259,7 +273,7 @@
             treeNode8.NodeFont = new Font("Microsoft Sans Serif", 12.8F, FontStyle.Bold);
             treeNode8.Text = "+ Gestão de Usuários";
             trv_MenuAdmFunc.Nodes.AddRange(new TreeNode[] { treeNode4, treeNode8 });
-            trv_MenuAdmFunc.Size = new Size(272, 173);
+            trv_MenuAdmFunc.Size = new Size(238, 131);
             trv_MenuAdmFunc.TabIndex = 2;
             trv_MenuAdmFunc.AfterCollapse += trv_MenuAdmFunc_AfterCollapse;
             trv_MenuAdmFunc.AfterExpand += trv_MenuAdmFunc_AfterExpand;
@@ -268,8 +282,9 @@
             // btn_PMAdm
             // 
             btn_PMAdm.Location = new Point(2, 0);
+            btn_PMAdm.Margin = new Padding(3, 2, 3, 2);
             btn_PMAdm.Name = "btn_PMAdm";
-            btn_PMAdm.Size = new Size(287, 50);
+            btn_PMAdm.Size = new Size(251, 38);
             btn_PMAdm.TabIndex = 1;
             btn_PMAdm.Text = "Abril Menu de Administrador";
             btn_PMAdm.UseVisualStyleBackColor = true;
@@ -277,12 +292,13 @@
             // 
             // TelaLoja
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1082, 853);
+            ClientSize = new Size(948, 646);
             Controls.Add(panel1);
-            MinimumSize = new Size(1100, 900);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(964, 685);
             Name = "TelaLoja";
             Text = "TelaLoja";
             Load += TelaLoja_Load;

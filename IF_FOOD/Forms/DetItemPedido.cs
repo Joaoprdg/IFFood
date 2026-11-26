@@ -26,7 +26,7 @@ namespace IFFood
             tb_Qtde.Text = "0";
             tb_Valor.Text = "0";
         }
-        //teste
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
             if (int.Parse(tb_Qtde.Text, null) <= Prod.Qtde)

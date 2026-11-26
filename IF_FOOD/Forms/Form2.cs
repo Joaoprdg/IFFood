@@ -856,9 +856,21 @@ namespace IFFood
 
         private void btn_ConfirmarLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TelaLoja segundaTela = new TelaLoja(this.pn_Cadastrar, this);
-            segundaTela.Show();
+            
+            if (UBD.VerificaLogin(tb_CodigoLogin.Text, tb_SenhaLogin.Text))
+            {
+                MessageBox.Show("Logado com sucesso!");
+                this.Hide();
+                U = UBD.PegaDados(U, tb_CodigoLogin.Text);
+                TelaLoja segundaTela = new TelaLoja(this.pn_Cadastrar, this, U);
+                segundaTela.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario ou senha incorretos!");
+            }
+            
+;           
 
             //TelaLoja telaLoja = new TelaLoja();
             //telaLoja.Show();

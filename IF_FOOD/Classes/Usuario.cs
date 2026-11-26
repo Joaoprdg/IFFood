@@ -28,5 +28,7 @@ namespace IFFood.Classes
             this.Genero = Genero;
         }
 
+        public Usuario() { }
     }
+
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IFFood.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,7 @@ namespace IFFood.Forms
         bool Logado = true;
         private Panel _pnCadastrarU;
         private Form2 _telaOriginal;
+        Usuario Us;
 
         private void TelaLoja_Load(object sender, EventArgs e)
         {
@@ -42,15 +44,15 @@ namespace IFFood.Forms
             pn_PMAdm.Height = btn_PMAdm.ClientSize.Height;
             _pnCadastrarU.Hide();
 
-            
+
             //string URL = "Colocar aqui a URL da imagem";
 
             //mudar para os dados de login
 
-            lbl_UserNameInfo.Text += "DualHeart";
-            lbl_InfoNomeU.Text += "Gabriel Verissimo";
-            lbl_EmailInfoU.Text += "gabrielverissimo673@gmail.com";
-            lbl_IdadeInfoU.Text += "17";
+            lbl_UserNameInfo.Text += this.Us.Nome_Usuario;
+            lbl_InfoNomeU.Text += this.Us.Nome;
+            lbl_EmailInfoU.Text += this.Us.Email;
+            lbl_IdadeInfoU.Text += this.Us.Data_Nasc;
             pb_FPerfilinfoU.SizeMode = PictureBoxSizeMode.Zoom;
             //pb_FPerfilinfoU.LoadAsync(URL); mudar a foto do perfil para a escolhida pelo usuario no login
 
@@ -70,10 +72,10 @@ namespace IFFood.Forms
         }
 
 
-        public TelaLoja(Panel Cadastrar, Form2 form2) : this()
+        public TelaLoja(Panel Cadastrar, Form2 form2, Usuario U) : this()
         {
             _telaOriginal = form2;
-
+            this.Us = U;
             if (Cadastrar != null)
             {
                 _pnCadastrarU = Cadastrar;
@@ -84,6 +86,7 @@ namespace IFFood.Forms
                 _pnCadastrarU.Enabled = true;
                 _pnCadastrarU.Visible = true;
                 _pnCadastrarU.BringToFront();
+
             }
         }
 
@@ -151,7 +154,7 @@ namespace IFFood.Forms
             BMenuAdm = !BMenuAdm;
             if (BMenuAdm == false)
             {
-                
+
 
                 do
                 {
@@ -159,7 +162,7 @@ namespace IFFood.Forms
                     await Task.Delay(1);
 
                 } while (pn_PMAdm.Height > btn_PMAdm.ClientSize.Height);
-                
+
 
 
                 //AjustarMenuAdm();
@@ -175,7 +178,7 @@ namespace IFFood.Forms
 
                 } while (pn_PMAdm.Height < (trv_MenuAdmFunc.ClientSize.Height + btn_PMAdm.ClientSize.Height + 30));
 
-                
+
                 //AjustarMenuAdm();
             }
         }
@@ -310,6 +313,11 @@ namespace IFFood.Forms
         {
             AjustarAlturaTreeView();
             AjustarMenuAdm();
+        }
+
+        private void pn_CNomeInfoU_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
