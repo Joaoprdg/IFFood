@@ -13,6 +13,7 @@ namespace IFFood.Forms
 {
     public partial class TelaLoja : Form
     {
+        
         public TelaLoja()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace IFFood.Forms
         private Form2 _telaOriginal;
         Usuario Us;
 
+
+
         private void TelaLoja_Load(object sender, EventArgs e)
         {
             pn_T2P.Height = btn_T2Perfil.ClientSize.Height;
@@ -45,11 +48,23 @@ namespace IFFood.Forms
             _pnCadastrarU.Hide();
 
 
-            //string URL = "Colocar aqui a URL da imagem";
+        //    private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    // Exemplo: perguntar ao usuário se ele realmente quer sair
+        //    DialogResult resultado = MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo);
 
-            //mudar para os dados de login
+        //    if (resultado == DialogResult.No)
+        //    {
+        //        // Cancela o fechamento do formulário
+        //        e.Cancel = true;
+        //    }
+        //}
 
-            lbl_UserNameInfo.Text += this.Us.Nome_Usuario;
+        //string URL = "Colocar aqui a URL da imagem";
+
+        //mudar para os dados de login
+
+        lbl_UserNameInfo.Text += this.Us.Nome_Usuario;
             lbl_InfoNomeU.Text += this.Us.Nome;
             lbl_EmailInfoU.Text += this.Us.Email;
             lbl_IdadeInfoU.Text += this.Us.Data_Nasc;
@@ -66,8 +81,10 @@ namespace IFFood.Forms
 
             _telaOriginal?.VerificarLogado(Logado);
 
+            
 
             TelaLoja_Resize(this, EventArgs.Empty);
+
 
         }
 
@@ -76,6 +93,7 @@ namespace IFFood.Forms
         {
             _telaOriginal = form2;
             this.Us = U;
+
             if (Cadastrar != null)
             {
                 _pnCadastrarU = Cadastrar;
@@ -86,7 +104,6 @@ namespace IFFood.Forms
                 _pnCadastrarU.Enabled = true;
                 _pnCadastrarU.Visible = true;
                 _pnCadastrarU.BringToFront();
-
             }
         }
 
@@ -104,8 +121,6 @@ namespace IFFood.Forms
                     await Task.Delay(1);
 
                 } while (pn_T2P.Height > btn_T2Perfil.ClientSize.Height);
-
-
             }
             else
             {
@@ -115,8 +130,6 @@ namespace IFFood.Forms
                     await Task.Delay(1);
 
                 } while (pn_T2P.Height < 256);
-
-
 
             }
         }
@@ -235,6 +248,8 @@ namespace IFFood.Forms
                 case "no_CadastrarProd":
                     MessageBox.Show("Cadastro de Produtos");
 
+
+
                     break;
 
                 case "no_EditarProd":
@@ -287,7 +302,7 @@ namespace IFFood.Forms
                 ? trv_MenuAdmFunc.ItemHeight
                 : trv_MenuAdmFunc.Font.Height + 6;
 
-            int novaAltura = (totalLinhasVisiveis * alturaLinha) + 8;
+            int novaAltura = (totalLinhasVisiveis * alturaLinha) + 16;
 
             if (trv_MenuAdmFunc.Height != novaAltura)
             {
@@ -315,9 +330,35 @@ namespace IFFood.Forms
             AjustarMenuAdm();
         }
 
-        private void pn_CNomeInfoU_Paint(object sender, PaintEventArgs e)
+        private void btn_AumQtdPed_Click(object sender, EventArgs e)
         {
+            int limite = 10; //limite de produtos no pedido
+            //aumenta a quantidade de produtos no pedido
+            if (int.Parse(tb_QtdPed.Text) < limite)
+            {
+                tb_QtdPed.Text = (int.Parse(tb_QtdPed.Text) + 1).ToString();
+                btn_DimQtdPed.Enabled = true;
+            }
+            else
+            {
+                btn_AumQtdPed.Enabled = false;
+            }
 
+
+        }
+
+        private void btn_DimQtdPed_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(tb_QtdPed.Text) > 0)
+            {
+                tb_QtdPed.Text = (int.Parse(tb_QtdPed.Text) - 1).ToString();
+                btn_AumQtdPed.Enabled = true;
+            }
+            else
+            {
+                btn_DimQtdPed.Enabled = false;
+
+            }
         }
     }
 }

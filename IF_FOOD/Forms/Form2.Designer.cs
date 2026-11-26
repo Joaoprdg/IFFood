@@ -484,6 +484,7 @@
             cmb_TipoUsuario.Name = "cmb_TipoUsuario";
             cmb_TipoUsuario.Size = new Size(202, 33);
             cmb_TipoUsuario.TabIndex = 25;
+            cmb_TipoUsuario.SelectedIndexChanged += cmb_TipoUsuario_SelectedIndexChanged;
             // 
             // btn_CancelarCadastro
             // 

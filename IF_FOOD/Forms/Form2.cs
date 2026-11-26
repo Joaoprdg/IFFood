@@ -844,7 +844,7 @@ namespace IFFood
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
-                    FileName = "https://github.com/Gabrie2684", //mudar para a pagina do projeto
+                    FileName = "https://github.com/Joaoprdg/IFFood/tree/master/IF_FOOD", //mudar para a pagina do projeto
                     UseShellExecute = true
                 });
             }
@@ -856,7 +856,6 @@ namespace IFFood
 
         private void btn_ConfirmarLogin_Click(object sender, EventArgs e)
         {
-            
             if (UBD.VerificaLogin(tb_CodigoLogin.Text, tb_SenhaLogin.Text))
             {
                 MessageBox.Show("Logado com sucesso!");
@@ -869,11 +868,6 @@ namespace IFFood
             {
                 MessageBox.Show("Usuario ou senha incorretos!");
             }
-            
-;           
-
-            //TelaLoja telaLoja = new TelaLoja();
-            //telaLoja.Show();
         }
 
         //cuidado
@@ -924,6 +918,11 @@ namespace IFFood
                 painel.Left = Math.Max(0, (tela.ClientSize.Width - painel.Width) / 2);
                 painel.Top = Math.Max(0, (tela.ClientSize.Height - painel.Height) / 2);
             }
+        }
+
+        private void cmb_TipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

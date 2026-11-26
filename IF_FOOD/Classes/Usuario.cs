@@ -29,6 +29,7 @@ namespace IFFood.Classes
         }
 
         public Usuario() { }
-    }
 
+
+    }
 }

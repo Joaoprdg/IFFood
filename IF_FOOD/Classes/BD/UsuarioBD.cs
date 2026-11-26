@@ -1,10 +1,9 @@
-﻿using IFFood.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using IFFood.Classes;
 namespace IFFood.Classes.BD
 {
     internal class UsuarioBD
@@ -12,7 +11,6 @@ namespace IFFood.Classes.BD
         public void Inserir(Usuario U)
         {
             const string sql = @"INSERT INTO G8_USUARIO (USUARIO, SENHA, NOME, DATA_NASC, EMAIL, ADM, GENERO) VALUES (:USUARIO, :SENHA, :NOME, :DATA_NASC, :EMAIL, :ADM, :GENERO)";
-
 
             using OracleConnection conn = ConexaoOracle.ObterConexao();
             using OracleCommand cmd = new OracleCommand(sql, conn);
@@ -37,13 +35,17 @@ namespace IFFood.Classes.BD
             //cmd.Parameters.Add("GENERO", OracleDbType.Varchar2).Value = U.Genero;
 
             cmd.ExecuteNonQuery();
+
+
+
+
         }
-        //ab
+
         public bool VerificaLogin(string username, string senha)
         {
             const string sql = @"SELECT COUNT(*) 
-                         FROM G8_USUARIO 
-                         WHERE USUARIO = :usuario AND SENHA = :senha";
+                 FROM G8_USUARIO 
+                 WHERE USUARIO = :usuario AND SENHA = :senha";
 
             using OracleConnection conn = ConexaoOracle.ObterConexao();
             using OracleCommand cmd = new(sql, conn);
@@ -55,37 +57,36 @@ namespace IFFood.Classes.BD
             return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
         }
 
-            private string BuscaCampo(string coluna, string username)
-            {
-                string sql = "SELECT " + coluna + " FROM G8_USUARIO WHERE USUARIO = :usuario";
+        private string BuscaCampo(string coluna, string username)
+        {
+            string sql = "SELECT " + coluna + " FROM G8_USUARIO WHERE USUARIO = :usuario";
 
-                using OracleConnection conn = ConexaoOracle.ObterConexao();
-                using OracleCommand cmd = new(sql, conn);
+            using OracleConnection conn = ConexaoOracle.ObterConexao();
+            using OracleCommand cmd = new(sql, conn);
 
-                cmd.BindByName = true;
-                cmd.Parameters.Add("usuario", OracleDbType.Varchar2).Value = username;
+            cmd.BindByName = true;
+            cmd.Parameters.Add("usuario", OracleDbType.Varchar2).Value = username;
 
-                object resultado = cmd.ExecuteScalar();
+            object resultado = cmd.ExecuteScalar();
 
-                if (resultado == null || resultado == DBNull.Value)
-                    return null;
+            if (resultado == null || resultado == DBNull.Value)
+                return null;
 
-                return resultado.ToString();
-            }
+            return resultado.ToString();
+        }
 
-            public Usuario PegaDados(Usuario U, string username)
-            {
-                U ??= new Usuario();  
+        public Usuario PegaDados(Usuario U, string username)
+        {
+            U ??= new Usuario();
 
-                U.Nome_Usuario = BuscaCampo("USUARIO", username);
-                U.Nome = BuscaCampo("NOME", username);
-                U.Data_Nasc = BuscaCampo("DATA_NASC", username);
-                U.Email = BuscaCampo("EMAIL", username);
-                U.Genero = BuscaCampo("GENERO", username);
-                U.Adm = Convert.ToInt32(BuscaCampo("ADM", username));
+            U.Nome_Usuario = BuscaCampo("USUARIO", username);
+            U.Nome = BuscaCampo("NOME", username);
+            U.Data_Nasc = BuscaCampo("DATA_NASC", username);
+            U.Email = BuscaCampo("EMAIL", username);
+            U.Genero = BuscaCampo("GENERO", username);
+            U.Adm = Convert.ToInt32(BuscaCampo("ADM", username));
 
-                return U;
-            }
+            return U;
+        }
     }
 }
-
